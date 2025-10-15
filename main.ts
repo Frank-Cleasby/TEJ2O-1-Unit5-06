@@ -1,8 +1,24 @@
 /* Copyright (c) 2020 MTHS All rights reserved
  *
- * Created by: XXX
- * Created on: Sep 2020
- * This program ...
+ * Created by: Frank
+ * Created on: Oct 2025
+ * This program grabs le distance
 */
 
-basic.showString('Hello, World!')
+// variables
+let grabLeDistance: number = 0
+
+//  clean
+basic.clearScreen()
+basic.showIcon(IconNames.Happy)
+
+// getting distance
+input.onButtonPressed(Button.A, function() {
+    grabLeDistance = sonar.ping(
+        DigitalPin.P8,
+        DigitalPin.P12,
+        PingUnit.Centimeters
+    )
+    basic.clearScreen()
+    basic.showNumber(grabLeDistance)
+})
